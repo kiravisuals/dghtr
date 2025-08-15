@@ -1,0 +1,594 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <link rel="preload" as="image" href="images/artistic-blurry-colorful-wallpaper-background.jpg">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kira Visuals | Video & Thumbnail Design</title>
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Google Fonts: Montserrat & Inter -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&family=Montserrat:wght@700;800&display=swap" rel="stylesheet">
+    
+    <!-- Feather Icons for social media links -->
+    <script src="https://unpkg.com/feather-icons"></script>
+
+    <style>
+        * {
+    box-sizing: border-box;
+}
+        @keyframes fadeIn {
+    0% { opacity: 0; transform: translateY(20px); }
+    100% { opacity: 1; transform: translateY(0); }
+}
+
+.animate-fade-in {
+    animation: fadeIn 1s ease-out forwards;
+}
+.container {
+    max-width: 1200px;   /* limits width for large screens */
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: 20px;
+    padding-right: 20px;
+}
+.service-card {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    border: 1px solid #333;
+    border-radius: 12px;
+    padding: 20px;
+    transition: transform 0.3s ease;
+}
+.service-card:hover {
+    transform: translateY(-5px);
+}
+.hero-bg {
+    width: 100vw;
+    height: 100vh;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+.hero-bg .hero-content {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+}
+footer {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: flex-start;
+}
+footer ul {
+    list-style: none;
+    padding: 0;
+}
+footer a {
+    display: block;
+    margin-bottom: 8px;
+}
+@media (max-width: 768px) {
+    .hero-bg .hero-content {
+        padding: 0 20px;
+        font-size: 1.2rem;
+    }
+    .grid {
+        grid-template-columns: 1fr !important;
+    }
+}
+
+        /* Custom Styles */
+        body {
+            background-color: #121212;
+            color: #E0E0E0;
+            font-family: 'Inter', sans-serif;
+        }
+        h1, h2, h3, h4, h5, h6 {
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 700;
+        }
+        .accent-blue {
+            color: #00A9FF;
+        }
+        .bg-accent-blue {
+            background-color: #00A9FF;
+        }
+        .border-accent-blue {
+            border-color: #00A9FF;
+        }
+        .nav-link {
+            position: relative;
+            transition: color 0.3s ease;
+        }
+        .nav-link::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            bottom: -4px;
+            left: 50%;
+            transform: translateX(-50%);
+            background-color: #00A9FF;
+            transition: width 0.3s ease;
+        }
+        .nav-link.active, .nav-link:hover {
+            color: #00A9FF;
+        }
+        .nav-link.active::after, .nav-link:hover::after {
+            width: 100%;
+        }
+        .hero-bg {
+    background-image: 
+        linear-gradient(rgba(18, 18, 18, 0.6), rgba(18, 18, 18, 0.6)),
+        url('images/yuriy-kovalev-nN1HSDtKdlw-unsplash.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    transition: background 0.5s ease-in-out;
+}
+        /* Lightbox styles */
+        .lightbox {
+            transition: opacity 0.3s ease-in-out;
+        }
+    </style>
+</head>
+<body class="antialiased">
+
+    <!-- Header -->
+    <header id="header" class="bg-gray-900/80 backdrop-blur-sm sticky top-0 z-50">
+        <nav class="container mx-auto px-6 py-4 flex justify-between items-center">
+            <a href="#home" class="text-2xl font-bold tracking-wider page-link">
+                KV<span class="accent-blue">.</span>
+            </a>
+            <div class="hidden md:flex items-center space-x-8">
+                <a href="#home" class="nav-link page-link active" data-page="home">HOME</a>
+                <a href="#video-editing" class="nav-link page-link" data-page="video-editing">VIDEO EDITING</a>
+                <a href="#thumbnail-design" class="nav-link page-link" data-page="thumbnail-design">THUMBNAIL DESIGN</a>
+                <a href="#contact" class="nav-link page-link" data-page="contact">CONTACT</a>
+            </div>
+            <!-- Mobile Menu Button -->
+            <button id="mobile-menu-button" class="md:hidden focus:outline-none">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7" />
+                </svg>
+            </button>
+        </nav>
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="hidden md:hidden px-6 pb-4">
+            <a href="#home" class="block py-2 nav-link page-link active" data-page="home">HOME</a>
+            <a href="#video-editing" class="block py-2 nav-link page-link" data-page="video-editing">VIDEO EDITING</a>
+            <a href="#thumbnail-design" class="block py-2 nav-link page-link" data-page="thumbnail-design">THUMBNAIL DESIGN</a>
+            <a href="#contact" class="block py-2 nav-link page-link" data-page="contact">CONTACT</a>
+        </div>
+    </header>
+
+    <main>
+        <!-- Home Page Section -->
+        <section id="home" class="page-content">
+            <!-- Hero Section -->
+            <div class="hero-bg min-h-screen flex items-center justify-center text-center px-6 md:px-0">
+                <div class="max-w-3xl px-6">
+                    <h1 class="text-5xl md:text-7xl font-extrabold uppercase tracking-wider leading-tight animate-fade-in">
+    Kira <span class="accent-blue">Visuals</span><br></h1>
+                    <p class="mt-6 text-lg md:text-xl text-gray-300">Professional video editing and compelling thumbnail design to elevate your content and captivate your audience.</p>
+                    <a href="#video-editing" class="page-link inline-block mt-10 px-10 py-4 bg-accent-blue text-gray-900 font-bold rounded-lg uppercase tracking-widest hover:bg-blue-400 hover:scale-105 transition-all duration-300 shadow-lg" data-page="video-editing">
+    View My Work
+</a>
+                </div>
+            </div>
+
+            <!-- Services Section -->
+            <div class="py-20 md:py-32 bg-gray-900">
+                <div class="container mx-auto px-6">
+                    <h2 class="text-4xl text-center font-bold uppercase">My Expertise</h2>
+                    <div class="mt-16 grid md:grid-cols-2 gap-12">
+                        <!-- Video Editing Card -->
+                        <div class="bg-gray-800 p-8 rounded-lg border border-gray-700 hover:border-accent-blue transition-all duration-300 transform hover:-translate-y-2">
+                            <h3 class="text-2xl font-bold uppercase">Dynamic Video Editing</h3>
+                            <p class="mt-4 text-gray-400">From corporate promotions to fast-paced YouTube content, I transform raw footage into a polished, narrative-driven final product that holds viewer attention.</p>
+                            <a href="#video-editing" class="page-link mt-6 inline-block font-semibold accent-blue hover:text-white transition-colors" data-page="video-editing">Explore Videos &rarr;</a>
+                        </div>
+                        <!-- Thumbnail Design Card -->
+                        <div class="bg-gray-800 p-8 rounded-lg border border-gray-700 hover:border-accent-blue transition-all duration-300 transform hover:-translate-y-2">
+                            <h3 class="text-2xl font-bold uppercase">High-Impact Thumbnails</h3>
+                            <p class="mt-4 text-gray-400">A great video is only effective if it gets clicked. I design vibrant, clear, and intriguing thumbnails that stand out in a crowded feed and boost your CTR.</p>
+                            <a href="#thumbnail-design" class="page-link mt-6 inline-block font-semibold accent-blue hover:text-white transition-colors" data-page="thumbnail-design">See Designs &rarr;</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Final CTA Section -->
+            <div class="py-20 text-center">
+                <h2 class="text-4xl font-bold uppercase">Ready to Elevate Your Content?</h2>
+                <a href="#contact" class="page-link inline-block mt-8 px-8 py-4 bg-accent-blue text-gray-900 font-bold rounded-lg uppercase tracking-widest hover:bg-blue-400 transition-colors duration-300" data-page="contact">
+                    Get In Touch
+                </a>
+            </div>
+        </section>
+
+        <!-- Video Editing Work Page Section -->
+        <section id="video-editing" class="page-content hidden min-h-screen py-20 md:py-28">
+            <div class="container mx-auto px-6">
+                <h1 class="text-4xl md:text-5xl font-bold uppercase text-center">Video Editing Portfolio</h1>
+                <p class="mt-4 text-center max-w-2xl mx-auto text-gray-400">Showcasing expertise in storytelling, pacing, color grading, and sound design.</p>
+                
+                <div class="mt-16 grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                    <!-- Project 1 -->
+                    <div class="group cursor-pointer" onclick="openLightbox('images/ba.png', 'Predict Next Candle', 'Client: Swag Binary <br> Role: Video Editor, Thumbnail Designer <br><br> Delivered a high-energy edit for a leading trading channel, incorporating rapid cuts, dynamic motion graphics, and immersive sound design to maximize audience engagement and retention.')">
+                        <div class="overflow-hidden rounded-lg">
+                            <img src="images/ba.png" alt="Corporate Video Thumbnail" class="w-full h-48 object-cover group-hover:scale-110 transition-transform duration-500">
+                        </div>
+                        <h3 class="mt-4 text-xl font-bold">Predict Next Candle</h3>
+                        <p class="text-gray-400">Client: Swag Binary</p>
+                    </div>
+                    <!-- Project 2 -->
+                    <div class="group cursor-pointer" onclick="openLightbox('images/v4DtPmaWOV8-HD.jpg', 'Quotex 1-Minute Trading Strategy', 'Client: SJ2 <br> Role: Video Editor, Thumbnail Designer <br><br> Produced a fast-paced edit for a top trading channel, blending swift cuts, captivating motion graphics, and impactful sound design to keep viewers hooked from start to finish.')">
+                        <div class="overflow-hidden rounded-lg">
+                            <img src="images/v4DtPmaWOV8-HD.jpg" alt="Tech Review Thumbnail" class="w-full h-48 object-cover group-hover:scale-110 transition-transform duration-500">
+                        </div>
+                        <h3 class="mt-4 text-xl font-bold">Quotex 1-Minute Trading Strategy</h3>
+                        <p class="text-gray-400">Client: SJ2</p>
+                    </div>
+                    <!-- Project 3 -->
+                    <div class="group cursor-pointer" onclick="openLightbox('images/bXMmCi1iQSQ-HD.jpg', 'Resident Evil - The Complete Story', 'Client: Creative Ashish <br> Role: Video Editor <br><br> Created an action-packed edit for a gaming channel, featuring rapid transitions, dynamic effects, and immersive sound design to capture the thrill and keep viewers engaged.')">
+                        <div class="overflow-hidden rounded-lg">
+                            <img src="images/bXMmCi1iQSQ-HD.jpg" alt="Travel Vlog Thumbnail" class="w-full h-48 object-cover group-hover:scale-110 transition-transform duration-500">
+                        </div>
+                        <h3 class="mt-4 text-xl font-bold">Resident Evil - The Complete Story</h3>
+                        <p class="text-gray-400">Client: Creative Ashish</p>
+                    </div>
+                    <!-- Add more projects as needed -->
+                </div>
+            </div>
+        </section>
+
+    <!-- Thumbnail Editing Work Page Section -->
+     <section id="thumbnail-design" class="page-content hidden min-h-screen py-20 md:py-28">
+            <div class="container mx-auto px-6">
+                <h1 class="text-4xl md:text-5xl font-bold uppercase text-center">
+    Thumbnail Designs
+</h1>
+<p class="mt-4 text-center max-w-2xl mx-auto text-gray-400">
+    Thumbnails designed to maximize curiosity and drive clicks across various niches.
+</p>
+    <!-- Category 1: Gaming Thumbnails -->
+    <div class="mt-12">  <!-- mt-12 = margin-top -->
+    <h2 class="text-2xl font-bold mb-4">Trading Thumbnails</h2>
+    <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
+            <div class="group cursor-pointer" onclick="openLightbox('images/4d9902b89090c934c97374f30348128e.jpg')">
+                <img src="images/4d9902b89090c934c97374f30348128e.jpg" alt="Gaming Thumbnail 1" class="rounded-lg w-full h-full object-cover transform hover:scale-105 transition-transform duration-300 border-2 border-transparent group-hover:border-accent-blue">
+            </div>
+            <div class="group cursor-pointer" onclick="openLightbox('images/How I Made $27K Day Trading with My Favorite Strategy _ Full Breakdown.jpg')">
+                <img src="images/How I Made $27K Day Trading with My Favorite Strategy _ Full Breakdown.jpg" alt="Gaming Thumbnail 2" class="rounded-lg w-full h-full object-cover transform hover:scale-105 transition-transform duration-300 border-2 border-transparent group-hover:border-accent-blue">
+            </div>
+            <div class="group cursor-pointer" onclick="openLightbox('images/Eye-Catching YouTube Thumbnails That Boost Views Instantly! 🚀 (1).jpeg')">
+                <img src="images/Eye-Catching YouTube Thumbnails That Boost Views Instantly! 🚀 (1).jpeg" alt="Gaming Thumbnail 2" class="rounded-lg w-full h-full object-cover transform hover:scale-105 transition-transform duration-300 border-2 border-transparent group-hover:border-accent-blue">
+            </div>
+            <div class="group cursor-pointer" onclick="openLightbox('images/Youtube Thumbnail (1).jpeg')">
+                <img src="images/Youtube Thumbnail (1).jpeg" alt="Gaming Thumbnail 2" class="rounded-lg w-full h-full object-cover transform hover:scale-105 transition-transform duration-300 border-2 border-transparent group-hover:border-accent-blue">
+            </div>
+            <div class="group cursor-pointer" onclick="openLightbox('images/download (1) (2).jpeg')">
+                <img src="images/download (1) (2).jpeg" alt="Gaming Thumbnail 1" class="rounded-lg w-full h-full object-cover transform hover:scale-105 transition-transform duration-300 border-2 border-transparent group-hover:border-accent-blue">
+            </div>
+            <div class="group cursor-pointer" onclick="openLightbox('images/YouTube Thumbnail Design_ Transforming Thumbnails for Maximum Impact! 🎨✨ (1).jpeg')">
+                <img src="images/YouTube Thumbnail Design_ Transforming Thumbnails for Maximum Impact! 🎨✨ (1).jpeg" alt="Gaming Thumbnail 1" class="rounded-lg w-full h-full object-cover transform hover:scale-105 transition-transform duration-300 border-2 border-transparent group-hover:border-accent-blue">
+            </div>
+            <div class="group cursor-pointer" onclick="openLightbox('images/IMG_20250814_183317_245.jpg')">
+                <img src="images/IMG_20250814_183317_245.jpg" alt="Gaming Thumbnail 1" class="rounded-lg w-full h-full object-cover transform hover:scale-105 transition-transform duration-300 border-2 border-transparent group-hover:border-accent-blue">
+            </div>
+            <div class="group cursor-pointer" onclick="openLightbox('images/download (2) (1).jpeg')">
+                <img src="images/download (2) (1).jpeg" alt="Gaming Thumbnail 1" class="rounded-lg w-full h-full object-cover transform hover:scale-105 transition-transform duration-300 border-2 border-transparent group-hover:border-accent-blue">
+            </div>
+        </div>
+    </div>
+
+    <!-- Category 2: Educational Thumbnails -->
+    <div class="mt-12">  <!-- mt-12 = margin-top -->
+    <h2 class="text-2xl font-bold mb-4">Documentary Thumbnails</h2>
+    <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
+            <div class="group cursor-pointer" onclick="openLightbox('images/7b98bba65a3fcdfa4fef7bfeeeb81ab4.jpg')">
+                <img src="images/7b98bba65a3fcdfa4fef7bfeeeb81ab4.jpg" alt="Educational Thumbnail 1" class="rounded-lg w-full h-full object-cover transform hover:scale-105 transition-transform duration-300 border-2 border-transparent group-hover:border-accent-blue">
+            </div>
+            <div class="group cursor-pointer" onclick="openLightbox('images/8d0c4d3a64507cc0238d15cc15550dae.jpg')">
+                <img src="images/8d0c4d3a64507cc0238d15cc15550dae.jpg" alt="Educational Thumbnail 2" class="rounded-lg w-full h-full object-cover transform hover:scale-105 transition-transform duration-300 border-2 border-transparent group-hover:border-accent-blue">
+            </div>
+            <div class="group cursor-pointer" onclick="openLightbox('images/19dc207479878a51925d67f3b7116344.jpg')">
+                <img src="images/19dc207479878a51925d67f3b7116344.jpg" alt="Educational Thumbnail 2" class="rounded-lg w-full h-full object-cover transform hover:scale-105 transition-transform duration-300 border-2 border-transparent group-hover:border-accent-blue">
+            </div>
+            <div class="group cursor-pointer" onclick="openLightbox('images/97bdf99f2cb0ae1c405461367662e104.jpg')">
+                <img src="images/97bdf99f2cb0ae1c405461367662e104.jpg" alt="Educational Thumbnail 2" class="rounded-lg w-full h-full object-cover transform hover:scale-105 transition-transform duration-300 border-2 border-transparent group-hover:border-accent-blue">
+            </div>
+            <div class="group cursor-pointer" onclick="openLightbox('images/501f1b0554f9dc4131f02bae002a292b.jpg')">
+                <img src="images/501f1b0554f9dc4131f02bae002a292b.jpg" alt="Educational Thumbnail 1" class="rounded-lg w-full h-full object-cover transform hover:scale-105 transition-transform duration-300 border-2 border-transparent group-hover:border-accent-blue">
+            </div>
+            <div class="group cursor-pointer" onclick="openLightbox('images/31985a8dec440340c8df1d9bca776377.jpg')">
+                <img src="images/31985a8dec440340c8df1d9bca776377.jpg" alt="Educational Thumbnail 2" class="rounded-lg w-full h-full object-cover transform hover:scale-105 transition-transform duration-300 border-2 border-transparent group-hover:border-accent-blue">
+            </div>
+            <div class="group cursor-pointer" onclick="openLightbox('images/bcb1dfe745f03001253b85ebbb0ed66d.jpg')">
+                <img src="images/bcb1dfe745f03001253b85ebbb0ed66d.jpg" alt="Educational Thumbnail 2" class="rounded-lg w-full h-full object-cover transform hover:scale-105 transition-transform duration-300 border-2 border-transparent group-hover:border-accent-blue">
+            </div>
+            <div class="group cursor-pointer" onclick="openLightbox('images/c6f460046b5a23995cc463bcd262a33a.jpg')">
+                <img src="images/c6f460046b5a23995cc463bcd262a33a.jpg" alt="Educational Thumbnail 2" class="rounded-lg w-full h-full object-cover transform hover:scale-105 transition-transform duration-300 border-2 border-transparent group-hover:border-accent-blue">
+            </div>
+        </div>
+    </div>
+
+    <!-- Category 3: Business Thumbnails -->
+    <div class="mt-12">  <!-- mt-12 = margin-top -->
+    <h2 class="text-2xl font-bold mb-4">Bussiness Thumbnails</h2>
+    <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
+            <div class="group cursor-pointer" onclick="openLightbox('images/f9ccd79dd5ecf5f9bccf8b11b5457494.jpg')">
+                <img src="images/f9ccd79dd5ecf5f9bccf8b11b5457494.jpg" alt="Business Thumbnail 1" class="rounded-lg w-full h-full object-cover transform hover:scale-105 transition-transform duration-300 border-2 border-transparent group-hover:border-accent-blue">
+            </div>
+            <div class="group cursor-pointer" onclick="openLightbox('images/2d04ef0421d28e0837b3e7f44a088a49.jpg')">
+                <img src="images/2d04ef0421d28e0837b3e7f44a088a49.jpg" alt="Business Thumbnail 2" class="rounded-lg w-full h-full object-cover transform hover:scale-105 transition-transform duration-300 border-2 border-transparent group-hover:border-accent-blue">
+            </div>
+            <div class="group cursor-pointer" onclick="openLightbox('images/6e9e11dbecf0610c6ca126773a0e9acb.jpg')">
+                <img src="images/6e9e11dbecf0610c6ca126773a0e9acb.jpg" alt="Business Thumbnail 1" class="rounded-lg w-full h-full object-cover transform hover:scale-105 transition-transform duration-300 border-2 border-transparent group-hover:border-accent-blue">
+            </div>
+            <div class="group cursor-pointer" onclick="openLightbox('images/963c0b209e916d413fbb0a4338534d03.jpg')">
+                <img src="images/963c0b209e916d413fbb0a4338534d03.jpg" alt="Business Thumbnail 2" class="rounded-lg w-full h-full object-cover transform hover:scale-105 transition-transform duration-300 border-2 border-transparent group-hover:border-accent-blue">
+            </div>
+        </div>
+    </div>
+
+</div>
+
+
+        <!-- Contact Page Section -->
+        <section id="contact" class="page-content hidden min-h-screen flex items-center justify-center py-20 md:py-28">
+            <div class="container mx-auto px-6">
+                <h1 class="text-4xl md:text-5xl font-bold uppercase text-center">Let's Create Together</h1>
+                <div class="mt-16 max-w-4xl mx-auto grid md:grid-cols-2 gap-12 bg-gray-900 p-8 rounded-lg">
+                    <!-- Left Column: Info -->
+                    <div>
+                        <h3 class="text-2xl font-bold">Get In Touch</h3>
+                        <p class="mt-4 text-gray-400">Have a project in mind, or want to inquire about my services? Please fill out the form, and I will get back to you within 24 business hours.</p>
+                        <div class="mt-8 space-y-4">
+                            <p class="flex items-center">
+                                <i data-feather="mail" class="w-5 h-5 mr-3 accent-blue"></i>
+                                <span>your.email@example.com</span>
+                            </p>
+                            <p class="flex items-center">
+                                <i data-feather="map-pin" class="w-5 h-5 mr-3 accent-blue"></i>
+                                <span>Chhatrapati Sambhajinagar, India</span>
+                            </p>
+                        </div>
+                        <div class="mt-8 flex space-x-4">
+                            <a href="#" class="text-gray-400 hover:accent-blue"><i data-feather="youtube"></i></a>
+                            <a href="#" class="text-gray-400 hover:accent-blue"><i data-feather="linkedin"></i></a>
+                            <a href="#" class="text-gray-400 hover:accent-blue"><i data-feather="instagram"></i></a>
+                        </div>
+                    </div>
+                    <!-- Right Column: Form -->
+                    <div>
+                        <form action="#" method="POST">
+                            <div class="space-y-6">
+                                <div>
+                                    <label for="name" class="block text-sm font-medium text-gray-300">Your Name</label>
+                                    <input type="text" name="name" id="name" required class="mt-1 block w-full bg-gray-800 border-gray-600 rounded-md shadow-sm py-2 px-3 focus:outline-none focus:ring-accent-blue focus:border-accent-blue">
+                                </div>
+                                <div>
+                                    <label for="email" class="block text-sm font-medium text-gray-300">Your Email</label>
+                                    <input type="email" name="email" id="email" required class="mt-1 block w-full bg-gray-800 border-gray-600 rounded-md shadow-sm py-2 px-3 focus:outline-none focus:ring-accent-blue focus:border-accent-blue">
+                                </div>
+                                <div>
+                                    <label for="subject" class="block text-sm font-medium text-gray-300">Subject</label>
+                                    <input type="text" name="subject" id="subject" class="mt-1 block w-full bg-gray-800 border-gray-600 rounded-md shadow-sm py-2 px-3 focus:outline-none focus:ring-accent-blue focus:border-accent-blue">
+                                </div>
+                                <div>
+                                    <label for="message" class="block text-sm font-medium text-gray-300">Tell me about your project</label>
+                                    <textarea name="message" id="message" rows="4" required class="mt-1 block w-full bg-gray-800 border-gray-600 rounded-md shadow-sm py-2 px-3 focus:outline-none focus:ring-accent-blue focus:border-accent-blue"></textarea>
+                                </div>
+                                <div>
+                                    <button type="submit" class="w-full px-6 py-3 bg-accent-blue text-gray-900 font-bold rounded-lg uppercase tracking-widest hover:bg-blue-400 transition-colors duration-300">
+                                        Send Message
+                                    </button>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 border-t border-gray-800">
+        <div class="container mx-auto px-6 py-8">
+            <div class="md:flex md:justify-between">
+                <div class="mb-6 md:mb-0">
+                    <a href="#home" class="text-2xl font-bold tracking-wider page-link">
+                        KV<span class="accent-blue">.</span>
+                    </a>
+                    <p class="mt-2 text-gray-400">Crafting Visuals that Convert.</p>
+                </div>
+                <div class="grid grid-cols-2 gap-8 sm:gap-6 sm:grid-cols-3">
+                    <div>
+                        <h2 class="mb-6 text-sm font-semibold text-gray-200 uppercase">Quick Links</h2>
+                        <ul class="text-gray-400">
+                            <li class="mb-4"><a href="#home" class="hover:underline page-link" data-page="home">Home</a></li>
+                            <li class="mb-4"><a href="#video-editing" class="hover:underline page-link" data-page="video-editing">Video Editing</a></li>
+                            <li><a href="#thumbnail-design" class="hover:underline page-link" data-page="thumbnail-design">Thumbnail Design</a></li>
+                        </ul>
+                    </div>
+                    <div>
+                        <h2 class="mb-6 text-sm font-semibold text-gray-200 uppercase">Follow Me</h2>
+                        <ul class="text-gray-400">
+                            <li class="mb-4"><a href="#" class="hover:underline">YouTube</a></li>
+                            <li class="mb-4"><a href="#" class="hover:underline">LinkedIn</a></li>
+                            <li><a href="#" class="hover:underline">Instagram</a></li>
+                        </ul>
+                    </div>
+                    <div>
+                        <h2 class="mb-6 text-sm font-semibold text-gray-200 uppercase">Legal</h2>
+                        <ul class="text-gray-400">
+                            <li class="mb-4"><a href="#" class="hover:underline">Privacy Policy</a></li>
+                            <li><a href="#" class="hover:underline">Terms &amp; Conditions</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <hr class="my-6 border-gray-700 sm:mx-auto lg:my-8" />
+            <div class="text-center text-gray-500">
+                &copy; <span id="year"></span> Kira Visuals. All Rights Reserved.
+            </div>
+        </div>
+    </footer>
+
+    <!-- Lightbox Modal -->
+    <div id="lightbox" class="lightbox fixed inset-0 bg-black bg-opacity-80 flex items-center justify-center p-4 z-50 opacity-0 pointer-events-none">
+        <div id="lightbox-content" class="bg-gray-900 rounded-lg max-w-4xl max-h-full overflow-auto w-full transform scale-95 transition-transform duration-300">
+            <div class="p-4 md:p-6">
+                <div class="flex justify-end">
+                    <button id="close-lightbox" class="text-gray-400 hover:text-white">&times;</button>
+                </div>
+                <div class="md:flex md:space-x-6 mt-2">
+                    <img id="lightbox-img" src="" alt="Lightbox image" class="w-full md:w-2/3 rounded-lg object-contain">
+                    <div class="mt-4 md:mt-0 md:w-1/3">
+                        <h3 id="lightbox-title" class="text-2xl font-bold"></h3>
+                        <p id="lightbox-desc" class="mt-2 text-gray-400"></p>
+                        <script src="https://cdn.jsdelivr.net/npm/feather-icons/dist/feather.min.js"></script>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const pageLinks = document.querySelectorAll('.page-link');
+            const pages = document.querySelectorAll('.page-content');
+            const navLinks = document.querySelectorAll('.nav-link');
+            const mobileMenuButton = document.getElementById('mobile-menu-button');
+            const mobileMenu = document.getElementById('mobile-menu');
+
+            // Function to switch pages
+            function showPage(pageId) {
+                // Hide all pages
+                pages.forEach(page => {
+                    page.classList.add('hidden');
+                });
+
+                // Show the target page
+                const targetPage = document.getElementById(pageId);
+                if (targetPage) {
+                    targetPage.classList.remove('hidden');
+                    window.scrollTo(0, 0); // Scroll to top on page change
+                }
+
+                // Update active nav link
+                navLinks.forEach(link => {
+                    link.classList.toggle('active', link.dataset.page === pageId);
+                });
+                
+                // Close mobile menu on navigation
+                mobileMenu.classList.add('hidden');
+            }
+
+            // Event listeners for page links
+            pageLinks.forEach(link => {
+                link.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    const pageId = this.dataset.page;
+                    if (pageId) {
+                        showPage(pageId);
+                        // Update URL hash without jumping
+                        history.pushState(null, null, `#${pageId}`);
+                    } else if (this.getAttribute('href').startsWith('#')) {
+                        // Handle internal anchor links like the hero CTA
+                        const targetId = this.getAttribute('href').substring(1);
+                        showPage(targetId);
+                        history.pushState(null, null, `#${targetId}`);
+                    }
+                });
+            });
+
+            // Mobile menu toggle
+            mobileMenuButton.addEventListener('click', function() {
+                mobileMenu.classList.toggle('hidden');
+            });
+            
+            // Set current year in footer
+            document.getElementById('year').textContent = new Date().getFullYear();
+
+            // Handle browser back/forward navigation
+            window.addEventListener('popstate', function() {
+                const pageId = location.hash.substring(1) || 'home';
+                showPage(pageId);
+            });
+
+            // Show initial page based on URL hash
+            const initialPage = location.hash.substring(1) || 'home';
+            showPage(initialPage);
+        });
+
+        // Lightbox functionality
+        const lightbox = document.getElementById('lightbox');
+        const lightboxContent = document.getElementById('lightbox-content');
+        const closeLightboxBtn = document.getElementById('close-lightbox');
+        const lightboxImg = document.getElementById('lightbox-img');
+        const lightboxTitle = document.getElementById('lightbox-title');
+        const lightboxDesc = document.getElementById('lightbox-desc');
+
+        function openLightbox(imgSrc, title = '', description = '') {
+            lightboxImg.src = imgSrc;
+            lightboxTitle.innerHTML = title;
+            lightboxDesc.innerHTML = description;
+
+            // Hide description section if no description is provided
+            if (!title && !description) {
+                lightboxTitle.parentElement.classList.add('hidden');
+                lightboxImg.classList.remove('md:w-2/3');
+                lightboxImg.classList.add('md:w-full');
+            } else {
+                lightboxTitle.parentElement.classList.remove('hidden');
+                lightboxImg.classList.add('md:w-2/3');
+                lightboxImg.classList.remove('md:w-full');
+            }
+
+            lightbox.classList.remove('opacity-0', 'pointer-events-none');
+            setTimeout(() => {
+                lightboxContent.classList.remove('scale-95');
+            }, 50);
+        }
+
+        function closeLightbox() {
+            lightboxContent.classList.add('scale-95');
+            lightbox.classList.add('opacity-0');
+            setTimeout(() => {
+                lightbox.classList.add('pointer-events-none');
+            }, 300);
+        }
+
+        closeLightboxBtn.addEventListener('click', closeLightbox);
+        lightbox.addEventListener('click', (e) => {
+            if (e.target === lightbox) {
+                closeLightbox();
+            }
+        });
+        
+        // Feather Icons
+        feather.replace();
+    </script>
+
+</body>
+</html>
